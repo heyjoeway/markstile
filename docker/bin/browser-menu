@@ -1,0 +1,18 @@
+#!/bin/bash
+# Openbox pipe menu: one item per browser chosen in the portal (the orchestrator
+# writes "id<TAB>label" lines).  Browsers are kept running by supervisord;
+# these items just bring a window back.
+LIST=${MARKSTILE_RUN:-/run/markstile}/browsers
+echo '<openbox_pipe_menu>'
+if [ -s "$LIST" ]; then
+    while IFS=$'\t' read -r id label; do
+        [[ $id =~ ^[a-z0-9-]+$ ]] || continue
+        label=$(sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g' <<<"$label")
+        echo "  <item label=\"$label\"><action name=\"Execute\"><command>/opt/markstile/bin/launch $id</command></action></item>"
+    done < "$LIST"
+else
+    echo '  <item label="No browsers chosen yet (see the portal)" />'
+fi
+echo '  <separator />'
+echo '  <menu id="client-list-combined-menu" />'
+echo '</openbox_pipe_menu>'

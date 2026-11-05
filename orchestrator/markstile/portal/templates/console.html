@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Console · MarkStile{% endblock %}
+{% block mainclass %}full{% endblock %}
+{% block content %}
+<div class="console-bar">
+  <span>Sign in to each browser and turn on bookmark sync. Switch windows with the taskbar at the bottom. Ctrl+V pastes from this computer.</span>
+  <span id="vnc-status">connecting…</span>
+</div>
+{% if novnc %}
+<div id="screen"></div>
+<textarea id="paste-catcher" tabindex="-1" aria-hidden="true"></textarea>
+{% else %}
+<p class="error">The noVNC client is not installed in this container.</p>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+{% if novnc %}
+<script type="module">
+import RFB from "/novnc/core/rfb.js";
+import KeyTable from "/novnc/core/input/keysym.js";
+const status = document.getElementById("vnc-status");
+const creds = await (await fetch("/console/credentials", { credentials: "same-origin" })).json();
+const proto = location.protocol === "https:" ? "wss" : "ws";
+const rfb = new RFB(document.getElementById("screen"), `${proto}://${location.host}/console/ws`,
+  { credentials: { password: creds.password } });
+rfb.scaleViewport = true;
+rfb.resizeSession = false;
+rfb.addEventListener("connect", () => (status.textContent = "connected"));
+rfb.addEventListener("disconnect", () => (status.textContent = "disconnected, reload to retry"));
+rfb.addEventListener("credentialsrequired", () => rfb.sendCredentials({ password: creds.password }));
+
+// Paste from this computer.  Reading the clipboard directly needs HTTPS, so on
+// Ctrl+V (Cmd+V on a Mac) focus moves to a hidden textarea for the browser's
+// own paste, the text goes to the VNC clipboard, and Ctrl+V is sent on.
+const catcher = document.getElementById("paste-catcher");
+const screenEl = document.getElementById("screen");
+let pending = null;
+let ctrlDown = false;  // whether noVNC has sent a held Ctrl to the server
+for (const type of ["keydown", "keyup"]) {
+  screenEl.addEventListener(type, (e) => {
+    if (e.key === "Control") ctrlDown = type === "keydown";
+  }, true);
+}
+const sendCtrlV = (fromMac) => {
+  if (fromMac) {  // the remote desktop pastes with Ctrl, not Super
+    rfb.sendKey(KeyTable.XK_Super_L, "MetaLeft", false);
+    rfb.sendKey(KeyTable.XK_Super_R, "MetaRight", false);
+  }
+  const wrap = fromMac || !ctrlDown;
+  if (wrap) rfb.sendKey(KeyTable.XK_Control_L, "ControlLeft", true);
+  rfb.sendKey(KeyTable.XK_v, "KeyV", true);
+  rfb.sendKey(KeyTable.XK_v, "KeyV", false);
+  if (wrap) rfb.sendKey(KeyTable.XK_Control_L, "ControlLeft", false);
+};
+screenEl.addEventListener("keydown", (e) => {
+  if (!(e.code === "KeyV" || e.key === "v" || e.key === "V") || e.altKey || e.shiftKey || !(e.ctrlKey || e.metaKey) || e.repeat) return;
+  e.stopPropagation();  // keep it from noVNC; no preventDefault, so the paste happens
+  const fromMac = e.metaKey && !e.ctrlKey;
+  catcher.value = "";
+  catcher.focus();
+  // no paste event (empty or non-text clipboard): pass the keys on anyway
+  pending = setTimeout(() => { pending = null; rfb.focus(); sendCtrlV(fromMac); }, 300);
+  catcher.dataset.mac = fromMac ? "1" : "";
+}, true);
+catcher.addEventListener("paste", (e) => {
+  e.preventDefault();
+  if (pending === null) return;
+  clearTimeout(pending);
+  pending = null;
+  const text = e.clipboardData.getData("text/plain");
+  if (text) rfb.clipboardPasteFrom(text);
+  rfb.focus();
+  // let the server take the new clipboard before the app asks for it
+  setTimeout(() => sendCtrlV(catcher.dataset.mac === "1"), 50);
+});
+</script>
+{% endif %}
+{% endblock %}

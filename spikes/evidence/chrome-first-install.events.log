@@ -1,0 +1,9 @@
+{"t": "2026-11-03T15:19:28", "msg": "listening", "http": 8780, "ws": 8765}
+{"t": "2026-11-03T15:19:40", "msg": "http", "req": "GET /update.xml?x=foo HTTP/1.1", "ua": "curl/8.18.0"}
+{"t": "2026-11-03T15:20:50", "msg": "http", "req": "GET /update.xml?os=linux&arch=x64&prod=chromecrx&prodchannel=&prodversion=156.0.8078.79&lang=en-US&acceptformat=crx3,puff&x=id%3Damfgkafnmffofhmicmeddphgmdglambl%26v%3D0.0.0.0%26installsource%3Dnotfromwebstore%26installedby%3Dpolicy%26uc HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:20:51", "msg": "http", "req": "GET /stileaf.crx HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:20:51", "msg": "hello", "peer": "('127.0.0.1', 49408)", "type": "hello", "browser": "chrome", "extVersion": "0.0.1", "browserVersion": "Chrome/156.0.0.0", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "amfgkafnmffofhmicmeddphgmdglambl", "workerStartedAt": 1793737251533, "connects": 1}
+{"t": "2026-11-03T15:20:51", "msg": "tree saved", "path": "$SCRATCH/out/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:21:11", "msg": "pong", "browser": "chrome", "uptimeMs": 20039, "connects": 1, "connectedFor": 20}
+{"t": "2026-11-03T15:21:27", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:21:27", "msg": "disconnect", "browser": "chrome", "connectedFor": 36}

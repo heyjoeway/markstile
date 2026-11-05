@@ -1,0 +1,20 @@
+[
+  {"type": "call", "method": "get", "args": ["3"]},
+  {"type": "call", "method": "create", "args": [{"parentId": "3", "title": "second in mobile", "url": "https://example.com/m2"}]},
+  {"type": "call", "method": "getChildren", "args": ["3"]},
+  {"type": "call", "method": "remove", "args": ["100"]},
+  {"type": "getTree"},
+  {"type": "call", "method": "remove", "args": ["$ref:1"]},
+  {"type": "getTree"},
+  {"type": "call", "method": "get", "args": ["3"]},
+  {"type": "call", "method": "getChildren", "args": ["3"]},
+  {"type": "call", "method": "create", "args": [{"parentId": "1", "title": "to be moved", "url": "https://example.com/move"}]},
+  {"type": "call", "method": "move", "args": ["$ref:9", {"parentId": "3"}]},
+  {"type": "getTree"},
+  {"type": "call", "method": "move", "args": ["$ref:9", {"parentId": "2"}]},
+  {"type": "getTree"},
+  {"type": "call", "method": "create", "args": [{"parentId": "3", "title": "created while empty", "url": "https://example.com/m3"}]},
+  {"type": "getTree"},
+  {"type": "call", "method": "remove", "args": ["$ref:14"]},
+  {"type": "getTree"}
+]

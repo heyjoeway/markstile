@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Browsers · MarkStile{% endblock %}
+{% block content %}
+<h1>{{ 'Choose your browsers' if first else 'Browsers' }}</h1>
+{% if first %}
+<p>Pick the browsers whose bookmarks you want to keep in sync. Only these are started in the Console, and you can change the choice later.</p>
+{% else %}
+<p>Only the browsers ticked here run in the Console and take part in syncing.</p>
+<ul class="hint">
+  <li><strong>Adding a browser</strong> starts it. {% if sync_enabled %}It waits on the Dashboard until you have signed in to it and click <em>Start syncing</em>. Then its bookmarks are merged in and nothing is deleted.{% else %}It is included in the First run merge.{% endif %}</li>
+  <li><strong>Removing a browser</strong> closes it, stops syncing it and erases its profile in the container: its bookmarks, sign-in and settings there. Your other browsers and your vendor account keep their bookmarks. Adding it back later starts a fresh profile you sign in to again.</li>
+</ul>
+{% endif %}
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<form method="post" class="stack" id="browsers-form">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <fieldset>
+    <legend>Browsers</legend>
+    {% for b in specs %}
+    <label class="choice"><input type="checkbox" name="browser" value="{{ b.id }}" data-label="{{ b.label }}" {{ 'checked' if b.id in chosen }}> <span>{{ b.label }}</span></label>
+    {% endfor %}
+  </fieldset>
+  <button class="primary">{{ 'Continue' if first else 'Save' }}</button>
+</form>
+<dialog id="remove-dialog" aria-labelledby="remove-title">
+  <h2 id="remove-title">Remove <span id="remove-names"></span>?</h2>
+  <p>This closes the browser and erases its profile in the container, including its sign-in. Your other browsers and your vendor account keep their bookmarks.</p>
+  <div class="row end">
+    <button type="button" id="remove-cancel" autofocus>Cancel</button>
+    <button class="primary" form="browsers-form">Remove and erase</button>
+  </div>
+</dialog>
+{% endblock %}
+{% block scripts %}
+<script>
+const browsersForm = document.getElementById("browsers-form");
+const removeDialog = document.getElementById("remove-dialog");
+const boxes = [...browsersForm.querySelectorAll("input[name=browser]")];
+const wasChosen = new Set(boxes.filter((b) => b.checked).map((b) => b.value));
+browsersForm.addEventListener("submit", (e) => {
+  if (removeDialog.open) return;
+  const removed = boxes.filter((b) => wasChosen.has(b.value) && !b.checked).map((b) => b.dataset.label);
+  if (!removed.length || !boxes.some((b) => b.checked)) return;  // nothing to erase, or the server's error
+  e.preventDefault();
+  document.getElementById("remove-names").textContent = new Intl.ListFormat("en", { type: "conjunction" }).format(removed);
+  removeDialog.showModal();
+});
+document.getElementById("remove-cancel").addEventListener("click", () => removeDialog.close());
+</script>
+{% endblock %}

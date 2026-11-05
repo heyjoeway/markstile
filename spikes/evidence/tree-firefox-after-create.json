@@ -1,0 +1,232 @@
+{
+  "steps": [
+    {
+      "type": "create",
+      "args": {
+        "parentId": "toolbar_____",
+        "title": "Stileaf spike (toolbar)",
+        "url": "https://example.com/bar"
+      }
+    },
+    {
+      "type": "create",
+      "args": {
+        "parentId": "unfiled_____",
+        "title": "Stileaf folder (other)"
+      }
+    },
+    {
+      "type": "create",
+      "args": {
+        "title": "No parentId given",
+        "url": "https://example.com/noparent"
+      }
+    },
+    {
+      "type": "create",
+      "args": {
+        "parentId": "mobile______",
+        "title": "In mobile root",
+        "url": "https://example.com/mobile"
+      }
+    }
+  ],
+  "results": [
+    {
+      "type": "result",
+      "id": 2,
+      "ok": true,
+      "node": {
+        "id": "v4AXB6nwe-ZF",
+        "title": "Stileaf spike (toolbar)",
+        "index": 0,
+        "dateAdded": 1793737496562,
+        "type": "bookmark",
+        "url": "https://example.com/bar",
+        "parentId": "toolbar_____"
+      }
+    },
+    {
+      "type": "result",
+      "id": 3,
+      "ok": true,
+      "node": {
+        "id": "pkar3Yxii3F-",
+        "title": "Stileaf folder (other)",
+        "index": 0,
+        "dateAdded": 1793737497244,
+        "type": "folder",
+        "parentId": "unfiled_____",
+        "dateGroupModified": 1793737497244
+      }
+    },
+    {
+      "type": "result",
+      "id": 4,
+      "ok": true,
+      "node": {
+        "id": "-CXqkFa3x46m",
+        "title": "No parentId given",
+        "index": 1,
+        "dateAdded": 1793737497461,
+        "type": "bookmark",
+        "url": "https://example.com/noparent",
+        "parentId": "unfiled_____"
+      }
+    },
+    {
+      "type": "result",
+      "id": 5,
+      "ok": true,
+      "node": {
+        "id": "oTac3FcFIJGQ",
+        "title": "In mobile root",
+        "index": 0,
+        "dateAdded": 1793737497895,
+        "type": "bookmark",
+        "url": "https://example.com/mobile",
+        "parentId": "mobile______"
+      }
+    }
+  ],
+  "tree": [
+    {
+      "id": "root________",
+      "title": "",
+      "index": 0,
+      "dateAdded": 1793737494600,
+      "type": "folder",
+      "dateGroupModified": 1793737497895,
+      "children": [
+        {
+          "id": "menu________",
+          "title": "Bookmarks Menu",
+          "index": 0,
+          "dateAdded": 1793737494600,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737496460,
+          "children": [
+            {
+              "id": "grnKBEeHRVxY",
+              "title": "Mozilla Firefox",
+              "index": 0,
+              "dateAdded": 1793737496460,
+              "type": "folder",
+              "parentId": "menu________",
+              "dateGroupModified": 1793737496460,
+              "children": [
+                {
+                  "id": "oTAa2W735bkc",
+                  "title": "Get Help",
+                  "index": 0,
+                  "dateAdded": 1793737496460,
+                  "type": "bookmark",
+                  "url": "https://support.mozilla.org/products/firefox",
+                  "parentId": "grnKBEeHRVxY"
+                },
+                {
+                  "id": "-UXGxUNh6Lsi",
+                  "title": "Customize Firefox",
+                  "index": 1,
+                  "dateAdded": 1793737496460,
+                  "type": "bookmark",
+                  "url": "https://support.mozilla.org/kb/customize-firefox-controls-buttons-and-toolbars?utm_source=firefox-browser&utm_medium=default-bookmarks&utm_campaign=customize",
+                  "parentId": "grnKBEeHRVxY"
+                },
+                {
+                  "id": "LEwBdUdAx4e0",
+                  "title": "Get Involved",
+                  "index": 2,
+                  "dateAdded": 1793737496460,
+                  "type": "bookmark",
+                  "url": "https://www.mozilla.org/contribute/",
+                  "parentId": "grnKBEeHRVxY"
+                },
+                {
+                  "id": "TBXapHhcDca0",
+                  "title": "About Us",
+                  "index": 3,
+                  "dateAdded": 1793737496460,
+                  "type": "bookmark",
+                  "url": "https://www.mozilla.org/about/",
+                  "parentId": "grnKBEeHRVxY"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "toolbar_____",
+          "title": "Bookmarks Toolbar",
+          "index": 1,
+          "dateAdded": 1793737494600,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737496562,
+          "children": [
+            {
+              "id": "v4AXB6nwe-ZF",
+              "title": "Stileaf spike (toolbar)",
+              "index": 0,
+              "dateAdded": 1793737496562,
+              "type": "bookmark",
+              "url": "https://example.com/bar",
+              "parentId": "toolbar_____"
+            }
+          ]
+        },
+        {
+          "id": "unfiled_____",
+          "title": "Other Bookmarks",
+          "index": 3,
+          "dateAdded": 1793737494600,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737497461,
+          "children": [
+            {
+              "id": "pkar3Yxii3F-",
+              "title": "Stileaf folder (other)",
+              "index": 0,
+              "dateAdded": 1793737497244,
+              "type": "folder",
+              "parentId": "unfiled_____",
+              "dateGroupModified": 1793737497244,
+              "children": []
+            },
+            {
+              "id": "-CXqkFa3x46m",
+              "title": "No parentId given",
+              "index": 1,
+              "dateAdded": 1793737497461,
+              "type": "bookmark",
+              "url": "https://example.com/noparent",
+              "parentId": "unfiled_____"
+            }
+          ]
+        },
+        {
+          "id": "mobile______",
+          "title": "Mobile Bookmarks",
+          "index": 4,
+          "dateAdded": 1793737494606,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737497895,
+          "children": [
+            {
+              "id": "oTac3FcFIJGQ",
+              "title": "In mobile root",
+              "index": 0,
+              "dateAdded": 1793737497895,
+              "type": "bookmark",
+              "url": "https://example.com/mobile",
+              "parentId": "mobile______"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

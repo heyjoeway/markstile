@@ -1,0 +1,35 @@
+{
+  "type": "result",
+  "id": 1,
+  "ok": true,
+  "tree": [
+    {
+      "children": [
+        {
+          "children": [],
+          "dateAdded": 1793737321242,
+          "folderType": "bookmarks-bar",
+          "id": "1",
+          "index": 0,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Favorites bar"
+        },
+        {
+          "children": [],
+          "dateAdded": 1793737321242,
+          "folderType": "other",
+          "id": "2",
+          "index": 1,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Other favorites"
+        }
+      ],
+      "dateAdded": 1793737321242,
+      "id": "0",
+      "syncing": false,
+      "title": ""
+    }
+  ]
+}

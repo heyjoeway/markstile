@@ -1,0 +1,102 @@
+# Build the MarkStile image and publish it to the GitHub container registry.
+#
+# Pushes to main and manual runs always build.  The daily run only builds when a
+# browser (or the Ubuntu base image) has a new release since the published
+# image, which records what it was built from in its org.markstile.versions label.
+name: Image
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["**.md", "deploy/**", "spikes/**"]
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: image
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    outputs:
+      build: ${{ steps.check.outputs.build }}
+      image: ${{ steps.check.outputs.image }}
+      versions: ${{ steps.check.outputs.versions }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: check
+        name: Compare browser versions with the published image
+        run: |
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/markstile"
+          browsers=$(python3 .github/scripts/browser_versions.py)
+          base=$(docker buildx imagetools inspect ubuntu:24.04 --format '{{json .Manifest}}' | jq -r .digest)
+          versions=$(jq -cnS --argjson b "$browsers" --arg base "$base" '$b + {"ubuntu:24.04": $base}')
+          # .Image is the config of a single manifest, or a map by platform for an index
+          published=$(docker buildx imagetools inspect "$image:latest" --format '{{json .Image}}' 2>/dev/null \
+            | jq -c 'if has("config") then . else (.["linux/amd64"] // first(.[])) end
+                     | .config.Labels["org.markstile.versions"] // empty | fromjson' || true)
+          echo "now:       $versions"
+          echo "published: ${published:-none}"
+          if [ "$GITHUB_EVENT_NAME" != schedule ]; then
+            build=true
+          else
+            build=$(jq -n --argjson a "$versions" --argjson b "${published:-null}" '$a != $b')
+          fi
+          echo "build: $build"
+          {
+            echo "build=$build"
+            echo "image=$image"
+            echo "versions=$versions"
+          } >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: check
+    if: needs.check.outputs.build == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Free disk space
+        # the image is about 5.5 GB; the runner's preinstalled SDKs aren't needed
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          docker image prune -af
+          df -h /
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ needs.check.outputs.image }}
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value={{date 'YYYY.MM.DD'}}.${{ github.run_number }}
+          labels: |
+            org.opencontainers.image.title=MarkStile
+            org.opencontainers.image.description=Two-way bookmark sync across Chrome, Edge, Brave, Vivaldi, Opera and Firefox
+            org.markstile.versions=${{ needs.check.outputs.versions }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          # one plain image manifest, so the check job can read its labels
+          provenance: false
+          sbom: false

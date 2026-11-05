@@ -1,0 +1,15 @@
+{"t": "2026-11-03T15:25:48", "msg": "hello", "peer": "('127.0.0.1', 59042)", "type": "hello", "browser": "firefox", "extVersion": "0.0.2", "browserVersion": "Firefox 160.0", "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:160.0) Gecko/20100101 Firefox/160.0", "extId": "spike@stileaf.local", "workerStartedAt": 1793737547656, "connects": 1}
+{"t": "2026-11-03T15:25:48", "msg": "tree saved", "path": "$SCRATCH/out-ff/tree-firefox.json", "ok": true}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "-eWHeNCj2fJ8"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "IWylaVwDeFzG"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "qqgoxBl2M0qf"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "u22qolur5nn_"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "xpL6uaLoyA9F"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "3dY55bCbYKyV"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "_YsGrlcGKbaY"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "q2OHPZ3_d-_0"}}
+{"t": "2026-11-03T15:25:48", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "8vx4nElweQJh"}}
+{"t": "2026-11-03T15:25:48", "msg": "script done", "path": "$SCRATCH/out-ff/tree-firefox-after.json", "results": [true, true, true, true]}
+{"t": "2026-11-03T15:26:08", "msg": "pong", "browser": "firefox", "uptimeMs": 20452, "connects": 1, "connectedFor": 20}
+{"t": "2026-11-03T15:26:14", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:26:14", "msg": "disconnect", "browser": "firefox", "connectedFor": 26}

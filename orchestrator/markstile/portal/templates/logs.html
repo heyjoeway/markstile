@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Logs · MarkStile{% endblock %}
+{% block content %}
+<h1>Logs</h1>
+<table class="logs">
+  <thead><tr><th>When</th><th>Level</th><th>Source</th><th>Message</th></tr></thead>
+  <tbody>
+  {% for l in logs %}
+  <tr class="lvl-{{ l.level }}"><td title="{{ l.ts | ts }}">{{ l.ts | ts }}</td><td>{{ l.level }}</td><td>{{ l.kind }}</td><td>{{ l.message }}</td></tr>
+  {% else %}
+  <tr><td colspan="4">Nothing logged yet.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

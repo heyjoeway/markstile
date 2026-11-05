@@ -1,0 +1,154 @@
+{
+  "steps": [
+    {
+      "type": "create",
+      "args": {
+        "parentId": "1",
+        "title": "Stileaf spike (bar)",
+        "url": "https://example.com/bar"
+      }
+    },
+    {
+      "type": "create",
+      "args": {
+        "parentId": "2",
+        "title": "Stileaf folder (other)"
+      }
+    },
+    {
+      "type": "create",
+      "args": {
+        "title": "No parentId given",
+        "url": "https://example.com/noparent"
+      }
+    }
+  ],
+  "results": [
+    {
+      "type": "result",
+      "id": 7,
+      "ok": true,
+      "node": {
+        "dateAdded": 1793737343410,
+        "id": "6",
+        "index": 0,
+        "parentId": "1",
+        "syncing": false,
+        "title": "Stileaf spike (bar)",
+        "url": "https://example.com/bar"
+      }
+    },
+    {
+      "type": "result",
+      "id": 8,
+      "ok": true,
+      "node": {
+        "dateAdded": 1793737343419,
+        "dateGroupModified": 1793737343419,
+        "id": "7",
+        "index": 0,
+        "parentId": "2",
+        "syncing": false,
+        "title": "Stileaf folder (other)"
+      }
+    },
+    {
+      "type": "result",
+      "id": 9,
+      "ok": true,
+      "node": {
+        "dateAdded": 1793737343424,
+        "id": "8",
+        "index": 1,
+        "parentId": "2",
+        "syncing": false,
+        "title": "No parentId given",
+        "url": "https://example.com/noparent"
+      }
+    }
+  ],
+  "tree": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "dateAdded": 1793737343410,
+              "id": "6",
+              "index": 0,
+              "parentId": "1",
+              "syncing": false,
+              "title": "Stileaf spike (bar)",
+              "url": "https://example.com/bar"
+            }
+          ],
+          "dateAdded": 1793737342558,
+          "dateGroupModified": 1793737343410,
+          "folderType": "bookmarks-bar",
+          "id": "1",
+          "index": 0,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Bookmarks bar"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dateAdded": 1793737343419,
+              "dateGroupModified": 1793737343419,
+              "id": "7",
+              "index": 0,
+              "parentId": "2",
+              "syncing": false,
+              "title": "Stileaf folder (other)"
+            },
+            {
+              "dateAdded": 1793737343424,
+              "id": "8",
+              "index": 1,
+              "parentId": "2",
+              "syncing": false,
+              "title": "No parentId given",
+              "url": "https://example.com/noparent"
+            }
+          ],
+          "dateAdded": 1793737342558,
+          "dateGroupModified": 1793737343424,
+          "folderType": "other",
+          "id": "2",
+          "index": 1,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Other bookmarks"
+        },
+        {
+          "children": [
+            {
+              "dateAdded": 1793737342558,
+              "id": "5",
+              "index": 0,
+              "parentId": "4",
+              "syncing": false,
+              "title": "Example",
+              "unmodifiable": "managed",
+              "url": "https://example.com/"
+            }
+          ],
+          "dateAdded": 1793737342558,
+          "folderType": "managed",
+          "id": "4",
+          "index": 2,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Stileaf managed",
+          "unmodifiable": "managed"
+        }
+      ],
+      "dateAdded": 1793737342558,
+      "id": "0",
+      "syncing": false,
+      "title": ""
+    }
+  ]
+}

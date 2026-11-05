@@ -1,0 +1,9 @@
+{
+  "manifest_version": 2,
+  "name": "Stileaf spike",
+  "version": "0.0.3",
+  "description": "Stileaf M0 spike extension",
+  "permissions": ["bookmarks", "alarms"],
+  "background": { "scripts": ["config.js", "bg.js"], "persistent": true },
+  "browser_specific_settings": { "gecko": { "id": "spike@stileaf.local", "strict_min_version": "115.0" } }
+}

@@ -1,0 +1,418 @@
+{
+  "steps": [
+    {
+      "type": "call",
+      "method": "get",
+      "args": [
+        "3"
+      ]
+    },
+    {
+      "type": "call",
+      "method": "getChildren",
+      "args": [
+        "3"
+      ]
+    },
+    {
+      "type": "call",
+      "method": "create",
+      "args": [
+        {
+          "parentId": "1",
+          "title": "to be moved",
+          "url": "https://example.com/move"
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "method": "create",
+      "args": [
+        {
+          "parentId": "3",
+          "title": "created in mobile",
+          "url": "https://example.com/mobile"
+        }
+      ]
+    },
+    {
+      "type": "getTree"
+    },
+    {
+      "type": "call",
+      "method": "get",
+      "args": [
+        "3"
+      ]
+    },
+    {
+      "type": "call",
+      "method": "remove",
+      "args": [
+        "$ref:3"
+      ]
+    },
+    {
+      "type": "getTree"
+    },
+    {
+      "type": "call",
+      "method": "getChildren",
+      "args": [
+        "3"
+      ]
+    },
+    {
+      "type": "call",
+      "method": "move",
+      "args": [
+        "$ref:2",
+        {
+          "parentId": "3"
+        }
+      ]
+    },
+    {
+      "type": "getTree"
+    },
+    {
+      "type": "call",
+      "method": "getChildren",
+      "args": [
+        "3"
+      ]
+    },
+    {
+      "type": "call",
+      "method": "move",
+      "args": [
+        "$ref:2",
+        {
+          "parentId": "2"
+        }
+      ]
+    },
+    {
+      "type": "getTree"
+    },
+    {
+      "type": "call",
+      "method": "getSubTree",
+      "args": [
+        "3"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "type": "result",
+      "id": 2,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 3,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 4,
+      "ok": true,
+      "value": {
+        "dateAdded": 1793740539770,
+        "id": "7",
+        "index": 0,
+        "parentId": "1",
+        "syncing": false,
+        "title": "to be moved",
+        "url": "https://example.com/move"
+      }
+    },
+    {
+      "type": "result",
+      "id": 5,
+      "ok": false,
+      "error": "Can't find parent bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 6,
+      "ok": true,
+      "tree": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "dateAdded": 1793740539770,
+                  "id": "7",
+                  "index": 0,
+                  "parentId": "1",
+                  "syncing": false,
+                  "title": "to be moved",
+                  "url": "https://example.com/move"
+                }
+              ],
+              "dateAdded": 1793740538564,
+              "dateGroupModified": 1793740539770,
+              "folderType": "bookmarks-bar",
+              "id": "1",
+              "index": 0,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Favorites bar"
+            },
+            {
+              "children": [],
+              "dateAdded": 1793740538564,
+              "folderType": "other",
+              "id": "2",
+              "index": 1,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Other favorites"
+            }
+          ],
+          "dateAdded": 1793740538564,
+          "id": "0",
+          "syncing": false,
+          "title": ""
+        }
+      ]
+    },
+    {
+      "type": "result",
+      "id": 7,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 8,
+      "ok": false,
+      "error": "Error in invocation of bookmarks.remove(string id, optional function callback): No matching signature."
+    },
+    {
+      "type": "result",
+      "id": 9,
+      "ok": true,
+      "tree": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "dateAdded": 1793740539770,
+                  "id": "7",
+                  "index": 0,
+                  "parentId": "1",
+                  "syncing": false,
+                  "title": "to be moved",
+                  "url": "https://example.com/move"
+                }
+              ],
+              "dateAdded": 1793740538564,
+              "dateGroupModified": 1793740539770,
+              "folderType": "bookmarks-bar",
+              "id": "1",
+              "index": 0,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Favorites bar"
+            },
+            {
+              "children": [],
+              "dateAdded": 1793740538564,
+              "folderType": "other",
+              "id": "2",
+              "index": 1,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Other favorites"
+            }
+          ],
+          "dateAdded": 1793740538564,
+          "id": "0",
+          "syncing": false,
+          "title": ""
+        }
+      ]
+    },
+    {
+      "type": "result",
+      "id": 10,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 11,
+      "ok": false,
+      "error": "Can't find parent bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 12,
+      "ok": true,
+      "tree": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "dateAdded": 1793740539770,
+                  "id": "7",
+                  "index": 0,
+                  "parentId": "1",
+                  "syncing": false,
+                  "title": "to be moved",
+                  "url": "https://example.com/move"
+                }
+              ],
+              "dateAdded": 1793740538564,
+              "dateGroupModified": 1793740539770,
+              "folderType": "bookmarks-bar",
+              "id": "1",
+              "index": 0,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Favorites bar"
+            },
+            {
+              "children": [],
+              "dateAdded": 1793740538564,
+              "folderType": "other",
+              "id": "2",
+              "index": 1,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Other favorites"
+            }
+          ],
+          "dateAdded": 1793740538564,
+          "id": "0",
+          "syncing": false,
+          "title": ""
+        }
+      ]
+    },
+    {
+      "type": "result",
+      "id": 13,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 14,
+      "ok": true,
+      "value": {
+        "dateAdded": 1793740539770,
+        "id": "7",
+        "index": 0,
+        "parentId": "2",
+        "syncing": false,
+        "title": "to be moved",
+        "url": "https://example.com/move"
+      }
+    },
+    {
+      "type": "result",
+      "id": 15,
+      "ok": true,
+      "tree": [
+        {
+          "children": [
+            {
+              "children": [],
+              "dateAdded": 1793740538564,
+              "dateGroupModified": 1793740539770,
+              "folderType": "bookmarks-bar",
+              "id": "1",
+              "index": 0,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Favorites bar"
+            },
+            {
+              "children": [
+                {
+                  "dateAdded": 1793740539770,
+                  "id": "7",
+                  "index": 0,
+                  "parentId": "2",
+                  "syncing": false,
+                  "title": "to be moved",
+                  "url": "https://example.com/move"
+                }
+              ],
+              "dateAdded": 1793740538564,
+              "dateGroupModified": 1793740539883,
+              "folderType": "other",
+              "id": "2",
+              "index": 1,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Other favorites"
+            }
+          ],
+          "dateAdded": 1793740538564,
+          "id": "0",
+          "syncing": false,
+          "title": ""
+        }
+      ]
+    },
+    {
+      "type": "result",
+      "id": 16,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    }
+  ],
+  "tree": [
+    {
+      "children": [
+        {
+          "children": [],
+          "dateAdded": 1793740538564,
+          "dateGroupModified": 1793740539770,
+          "folderType": "bookmarks-bar",
+          "id": "1",
+          "index": 0,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Favorites bar"
+        },
+        {
+          "children": [
+            {
+              "dateAdded": 1793740539770,
+              "id": "7",
+              "index": 0,
+              "parentId": "2",
+              "syncing": false,
+              "title": "to be moved",
+              "url": "https://example.com/move"
+            }
+          ],
+          "dateAdded": 1793740538564,
+          "dateGroupModified": 1793740539883,
+          "folderType": "other",
+          "id": "2",
+          "index": 1,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Other favorites"
+        }
+      ],
+      "dateAdded": 1793740538564,
+      "id": "0",
+      "syncing": false,
+      "title": ""
+    }
+  ]
+}

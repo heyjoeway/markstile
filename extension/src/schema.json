@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "wsPort": { "type": "integer", "description": "Port of the orchestrator's extension WebSocket on 127.0.0.1" },
+    "secret": { "type": "string", "description": "Shared secret sent in the hello message" },
+    "browser": { "type": "string", "description": "chrome, edge or firefox" }
+  }
+}

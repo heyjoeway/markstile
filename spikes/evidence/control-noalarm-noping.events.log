@@ -1,0 +1,6 @@
+{"t": "2026-11-03T15:29:03", "msg": "listening", "http": 8784, "ws": 8769}
+{"t": "2026-11-03T15:29:08", "msg": "http", "req": "GET /update.xml?os=linux&arch=x64&prod=chromecrx&prodchannel=&prodversion=156.0.8078.79&lang=en-US&acceptformat=crx3,puff&x=id%3Dehhnmcfkpddmebakkjjeckndihfbcodg%26v%3D0.0.0.0%26installsource%3Dnotfromwebstore%26installedby%3Dpolicy%26uc HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:29:09", "msg": "http", "req": "GET /stileaf.crx HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:29:10", "msg": "hello", "peer": "('127.0.0.1', 49022)", "type": "hello", "browser": "chrome", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.79, Google Chrome 156.0.8078.79", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "ehhnmcfkpddmebakkjjeckndihfbcodg", "workerStartedAt": 1793737750545, "connects": 1}
+{"t": "2026-11-03T15:29:10", "msg": "tree saved", "path": "$SCRATCH/out-bareB/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:29:40", "msg": "disconnect", "browser": "chrome", "connectedFor": 30}

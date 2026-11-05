@@ -1,0 +1,17 @@
+[
+  {"type": "call", "method": "get", "args": ["3"]},
+  {"type": "call", "method": "getChildren", "args": ["3"]},
+  {"type": "call", "method": "create", "args": [{"parentId": "1", "title": "to be moved", "url": "https://example.com/move"}]},
+  {"type": "call", "method": "create", "args": [{"parentId": "3", "title": "created in mobile", "url": "https://example.com/mobile"}]},
+  {"type": "getTree"},
+  {"type": "call", "method": "get", "args": ["3"]},
+  {"type": "call", "method": "remove", "args": ["$ref:3"]},
+  {"type": "getTree"},
+  {"type": "call", "method": "getChildren", "args": ["3"]},
+  {"type": "call", "method": "move", "args": ["$ref:2", {"parentId": "3"}]},
+  {"type": "getTree"},
+  {"type": "call", "method": "getChildren", "args": ["3"]},
+  {"type": "call", "method": "move", "args": ["$ref:2", {"parentId": "2"}]},
+  {"type": "getTree"},
+  {"type": "call", "method": "getSubTree", "args": ["3"]}
+]

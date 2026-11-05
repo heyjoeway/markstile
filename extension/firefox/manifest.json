@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "MarkStile",
+  "version": "0.1.8",
+  "icons": { "128": "icon-128.png" },
+  "description": "Bridges this browser's bookmarks to the MarkStile sync orchestrator.",
+  "permissions": ["bookmarks", "alarms", "storage", "ws://127.0.0.1/*"],
+  "background": { "scripts": ["background.js"], "persistent": true },
+  "browser_specific_settings": {
+    "gecko": { "id": "markstile@markstile.local", "strict_min_version": "115.0" }
+  }
+}

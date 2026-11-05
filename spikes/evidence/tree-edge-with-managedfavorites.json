@@ -1,0 +1,57 @@
+{
+  "type": "result",
+  "id": 2,
+  "ok": true,
+  "tree": [
+    {
+      "children": [
+        {
+          "children": [],
+          "dateAdded": 1793737401448,
+          "folderType": "bookmarks-bar",
+          "id": "1",
+          "index": 0,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Favorites bar"
+        },
+        {
+          "children": [],
+          "dateAdded": 1793737401448,
+          "folderType": "other",
+          "id": "2",
+          "index": 1,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Other favorites"
+        },
+        {
+          "children": [
+            {
+              "dateAdded": 1793737401448,
+              "id": "7",
+              "index": 0,
+              "parentId": "6",
+              "syncing": false,
+              "title": "Example",
+              "unmodifiable": "managed",
+              "url": "https://example.com/"
+            }
+          ],
+          "dateAdded": 1793737401446,
+          "folderType": "managed",
+          "id": "6",
+          "index": 2,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Stileaf managed",
+          "unmodifiable": "managed"
+        }
+      ],
+      "dateAdded": 1793737401448,
+      "id": "0",
+      "syncing": false,
+      "title": ""
+    }
+  ]
+}

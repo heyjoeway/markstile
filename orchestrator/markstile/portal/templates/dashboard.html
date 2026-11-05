@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · MarkStile{% endblock %}
+{% block content %}
+<div id="status">
+{% if not s.sync_enabled %}
+<div class="callout">
+  <h2>Finish setting up</h2>
+  <ol>
+    <li>Open the <a href="/console">Console</a> and sign in to each browser with its vendor account (Google, Microsoft, Mozilla). Turn on bookmark sync.</li>
+    <li>Wait until each browser's bookmarks have finished arriving from its vendor sync. The counts below update live.</li>
+    <li>Choose how to combine them on the <a href="/firstrun">First run</a> page. Nothing is synced until you do.</li>
+  </ol>
+</div>
+{% endif %}
+
+{% for b in s.browsers if b.hold %}
+<div class="callout warn">
+  <h2>Held changes from {{ b.label }}</h2>
+  <p>{{ b.hold.reason }} ({{ b.hold.deleted }} of {{ b.hold.total }} bookmarks, detected {{ b.hold.ts | ago }}). Common causes: signed out, profile reset, or a vendor sync hiccup. Nothing has been spread to the other browsers.</p>
+  <form method="post" action="/holds/{{ b.name }}" class="row">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <button name="action" value="reject" class="primary">Reject: restore {{ b.label }}</button>
+    <button name="action" value="approve" class="danger" onclick="return confirm('Delete these bookmarks from every browser?')">Approve: delete everywhere</button>
+  </form>
+</div>
+{% endfor %}
+
+{% for b in s.browsers if b.paused %}
+<div class="callout">
+  <h2>{{ b.label }} is waiting to join</h2>
+  <p>Open the <a href="/console">Console</a>, sign in to {{ b.label }} and turn on its bookmark sync. Once its bookmarks have arrived, start syncing it. Its bookmarks are merged with the others and nothing is deleted.</p>
+  <form method="post" action="/browsers/{{ b.name }}/join">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <button class="primary">Start syncing {{ b.label }}</button>
+  </form>
+</div>
+{% endfor %}
+
+<section class="cards">
+{% for b in s.browsers %}
+  <article class="card">
+    <h3><span class="dot {{ 'ok' if b.connected else 'off' }}"></span>{{ b.label }}</h3>
+    <dl>
+      <dt>Extension</dt><dd>{{ 'connected' if b.connected else 'not connected' }}{% if b.ext_version %} · v{{ b.ext_version }}{% endif %}</dd>
+      {% if b.paused %}<dt>Sync</dt><dd>waiting to join</dd>{% endif %}
+      <dt>Bookmarks</dt><dd>{{ b.bookmarks if b.bookmarks is not none else '—' }}</dd>
+      <dt>Last sync</dt><dd title="{{ b.last_sync | ts }}">{{ b.last_sync | ago }}</dd>
+      {% if b.last_error %}<dt>Last error</dt><dd class="error-text">{{ b.last_error }}</dd>{% endif %}
+    </dl>
+  </article>
+{% endfor %}
+</section>
+
+<section class="global">
+  <dl>
+    <dt>Sync</dt><dd>{% if s.running %}running…{% elif s.sync_enabled %}enabled{% else %}waiting for first-run choice{% endif %}</dd>
+    <dt>Last cycle</dt><dd>{% if s.last_cycle %}{{ s.last_cycle.ts | ago }} ({{ s.last_cycle.reason }}){% if s.last_cycle.error %} — <span class="error-text">{{ s.last_cycle.error }}</span>{% endif %}{% else %}none yet{% endif %}</dd>
+    <dt>Next scheduled</dt><dd>{{ s.next_scheduled | ago if s.next_scheduled else '—' }}</dd>
+    <dt>Canonical tree</dt><dd>{% if s.k_version %}version {{ s.k_version }} · {{ s.k_bookmarks }} bookmarks{% else %}—{% endif %}</dd>
+  </dl>
+  <form method="post" action="/sync"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="primary" {{ 'disabled' if not s.sync_enabled }}>Sync now</button></form>
+</section>
+<p class="hint">Signed-in state can't be read from outside the browsers. Check each browser's sync settings in the Console.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+setInterval(async () => {
+  if (document.hidden || document.querySelector("form:hover") || document.activeElement?.tagName === "BUTTON") return;
+  try {
+    const r = await fetch("/", { credentials: "same-origin" });
+    if (!r.ok || r.redirected) return;
+    const doc = new DOMParser().parseFromString(await r.text(), "text/html");
+    const fresh = doc.getElementById("status");
+    if (fresh) document.getElementById("status").replaceWith(fresh);
+  } catch (e) {}
+}, 5000);
+</script>
+{% endblock %}

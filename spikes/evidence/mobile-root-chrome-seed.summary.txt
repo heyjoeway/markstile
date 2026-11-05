@@ -1,0 +1,18 @@
+ 0 get ["3"] -> OK [{"id": "3", "parentId": "0", "title": "Mobile bookmarks", "folderType": "mobile", "index": 2}]
+ 1 create [{"parentId": "3", "title": "second in mobile", "url": "https://example.com/m2"}] -> OK {"id": "102", "parentId": "3", "title": "second in mobile", "index": 1}
+ 2 getChildren ["3"] -> OK [{"id": "100", "parentId": "3", "title": "Seeded mobile bookmark", "index": 0}, {"id": "102", "parentId": "3", "title": "second in mobile", "index": 1}]
+ 3 remove ["100"] -> OK null
+ 4 getTree -> roots (id, folderType, #children): [('1', 'bookmarks-bar', 1), ('2', 'other', 2), ('3', 'mobile', 1)]
+ 5 remove ["$ref:1"] -> OK null
+ 6 getTree -> roots (id, folderType, #children): [('1', 'bookmarks-bar', 1), ('2', 'other', 2)]
+ 7 get ["3"] -> ERROR Can't find bookmark for id.
+ 8 getChildren ["3"] -> ERROR Can't find bookmark for id.
+ 9 create [{"parentId": "1", "title": "to be moved", "url": "https://example.com/move"}] -> OK {"id": "103", "parentId": "1", "title": "to be moved", "index": 1}
+10 move ["$ref:9", {"parentId": "3"}] -> ERROR Can't find parent bookmark for id.
+11 getTree -> roots (id, folderType, #children): [('1', 'bookmarks-bar', 2), ('2', 'other', 2)]
+12 move ["$ref:9", {"parentId": "2"}] -> OK {"id": "103", "parentId": "2", "title": "to be moved", "index": 2}
+13 getTree -> roots (id, folderType, #children): [('1', 'bookmarks-bar', 1), ('2', 'other', 3)]
+14 create [{"parentId": "3", "title": "created while empty", "url": "https://example.com/m3"} -> ERROR Can't find parent bookmark for id.
+15 getTree -> roots (id, folderType, #children): [('1', 'bookmarks-bar', 1), ('2', 'other', 3)]
+16 remove ["$ref:14"] -> ERROR Error in invocation of bookmarks.remove(string id, optional function callback): No matching signature.
+17 getTree -> roots (id, folderType, #children): [('1', 'bookmarks-bar', 1), ('2', 'other', 3)]

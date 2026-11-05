@@ -1,0 +1,23 @@
+services:
+  markstile:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: markstile:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    ports:
+      # LAN/Tailscale only. Do not expose this to the internet.
+      - "8080:8080"
+    shm_size: "1gb"
+    # let the browsers flush their bookmark files on shutdown
+    stop_grace_period: 30s
+    volumes:
+      - markstile-data:/data
+    environment:
+      TZ: Etc/UTC
+      # SYNC_INTERVAL: 5m
+      # PORTAL_RESET: change-this-value-to-reset-the-portal-password
+
+volumes:
+  markstile-data:

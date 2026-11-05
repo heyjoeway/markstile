@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}MarkStile{% endblock %}</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="/static/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/static/icon-256.png">
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><img src="/static/icon.png" alt="" width="32" height="32"> MarkStile</a>
+  {% if authed %}
+  <nav>
+    <a href="/" class="{{ 'on' if page == 'dashboard' }}">Dashboard</a>
+    <a href="/console" class="{{ 'on' if page == 'console' }}">Console</a>
+    <a href="/browsers" class="{{ 'on' if page == 'browsers' }}">Browsers</a>
+    {% if not sync_enabled %}<a href="/firstrun" class="{{ 'on' if page == 'firstrun' }}">First run</a>{% endif %}
+    <a href="/history" class="{{ 'on' if page == 'history' }}">History</a>
+    <a href="/logs" class="{{ 'on' if page == 'logs' }}">Logs</a>
+    <a href="/settings" class="end {{ 'on' if page == 'settings' }}">Settings</a>
+  </nav>
+  {% endif %}
+</header>
+<main class="{% block mainclass %}{% endblock %}">
+{% if flash %}<p class="flash">{{ flash }}</p>{% endif %}
+{% block content %}{% endblock %}
+</main>
+{% block scripts %}{% endblock %}
+</body>
+</html>

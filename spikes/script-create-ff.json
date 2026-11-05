@@ -1,0 +1,6 @@
+[
+  {"type": "create", "args": {"parentId": "toolbar_____", "title": "Stileaf spike (toolbar)", "url": "https://example.com/bar"}},
+  {"type": "create", "args": {"parentId": "unfiled_____", "title": "Stileaf folder (other)"}},
+  {"type": "create", "args": {"title": "No parentId given", "url": "https://example.com/noparent"}},
+  {"type": "create", "args": {"parentId": "mobile______", "title": "In mobile root", "url": "https://example.com/mobile"}}
+]

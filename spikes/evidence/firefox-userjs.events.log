@@ -1,0 +1,16 @@
+{"t": "2026-11-03T15:23:58", "msg": "listening", "http": 8782, "ws": 8767}
+{"t": "2026-11-03T15:24:56", "msg": "hello", "peer": "('127.0.0.1', 50856)", "type": "hello", "browser": "firefox", "extVersion": "0.0.2", "browserVersion": "Firefox 160.0", "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:160.0) Gecko/20100101 Firefox/160.0", "extId": "spike@stileaf.local", "workerStartedAt": 1793737495858, "connects": 1}
+{"t": "2026-11-03T15:24:56", "msg": "tree saved", "path": "$SCRATCH/out-ff/tree-firefox.json", "ok": true}
+{"t": "2026-11-03T15:24:56", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "grnKBEeHRVxY"}}
+{"t": "2026-11-03T15:24:56", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "oTAa2W735bkc"}}
+{"t": "2026-11-03T15:24:56", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "-UXGxUNh6Lsi"}}
+{"t": "2026-11-03T15:24:56", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "LEwBdUdAx4e0"}}
+{"t": "2026-11-03T15:24:56", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "TBXapHhcDca0"}}
+{"t": "2026-11-03T15:24:57", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "v4AXB6nwe-ZF"}}
+{"t": "2026-11-03T15:24:57", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "pkar3Yxii3F-"}}
+{"t": "2026-11-03T15:24:57", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "-CXqkFa3x46m"}}
+{"t": "2026-11-03T15:24:57", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "oTac3FcFIJGQ"}}
+{"t": "2026-11-03T15:24:58", "msg": "script done", "path": "$SCRATCH/out-ff/tree-firefox-after.json", "results": [true, true, true, true]}
+{"t": "2026-11-03T15:25:16", "msg": "pong", "browser": "firefox", "uptimeMs": 20636, "connects": 1, "connectedFor": 20}
+{"t": "2026-11-03T15:25:31", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:25:31", "msg": "disconnect", "browser": "firefox", "connectedFor": 35}

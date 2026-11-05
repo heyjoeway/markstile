@@ -1,0 +1,40 @@
+#!/bin/bash
+# Start one display component or browser once the X server is up.
+set -euo pipefail
+export DISPLAY=:1 HOME=${MARKSTILE_DATA:-/data}/home
+P=${MARKSTILE_DATA:-/data}/profiles
+RUN_DIR=${MARKSTILE_RUN:-/run/markstile}
+
+for _ in $(seq 1 100); do
+    [ -S /tmp/.X11-unix/X1 ] && break
+    sleep 0.2
+done
+
+# Ordinary launches: no automation or remote-debugging flags.
+CHROMIUM_FLAGS=(--password-store=basic --no-first-run --no-default-browser-check
+    --disable-gpu --disable-dev-shm-usage --start-maximized --hide-crash-restore-bubble)
+EXTRA=$(cat "$RUN_DIR/chromium-flags" 2>/dev/null || true)
+
+case "$1" in
+    openbox)
+        exec openbox --config-file /etc/markstile/openbox/rc.xml ;;
+    tint2)
+        exec tint2 -c /etc/markstile/openbox/tint2rc ;;
+    chrome)
+        exec google-chrome-stable --user-data-dir="$P/chrome" "${CHROMIUM_FLAGS[@]}" $EXTRA ;;
+    edge)
+        exec microsoft-edge-stable --user-data-dir="$P/edge" "${CHROMIUM_FLAGS[@]}" $EXTRA ;;
+    brave)
+        exec brave-browser-stable --user-data-dir="$P/brave" "${CHROMIUM_FLAGS[@]}" $EXTRA ;;
+    vivaldi)
+        # new tabs: about:blank (no policy for it; see markstile/prefs.py)
+        /opt/markstile/venv/bin/markstile prefs vivaldi "$P/vivaldi" || true
+        exec vivaldi-stable --user-data-dir="$P/vivaldi" "${CHROMIUM_FLAGS[@]}" $EXTRA ;;
+    opera)
+        exec opera --user-data-dir="$P/opera" "${CHROMIUM_FLAGS[@]}" $EXTRA ;;
+    firefox)
+        # remoting stays on so the openbox menu can reopen a window in the running instance
+        exec firefox-devedition --profile "$P/firefox" ;;
+    *)
+        echo "unknown component $1" >&2; exit 2 ;;
+esac

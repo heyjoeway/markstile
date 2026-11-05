@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Settings · MarkStile{% endblock %}
+{% block content %}
+<h1>Settings</h1>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<form method="post" class="stack wide">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <fieldset>
+    <legend>Root folders</legend>
+    <p class="hint"><strong>Mirror</strong> syncs the root 1:1. <strong>Inbox</strong> moves anything that appears in the root to a destination, e.g. <code>toolbar</code> or <code>other/From phone</code>, so bookmarks saved on a phone land somewhere useful.</p>
+    {% for role in roles %}
+    {% set m = st.root_modes.get(role, 'mirror') %}
+    <div class="row">
+      <span class="role">{{ {'toolbar':'Toolbar / Favorites bar','other':'Other bookmarks','mobile':'Mobile bookmarks','menu':'Bookmarks menu (Firefox)'}[role] }}</span>
+      <select name="mode_{{ role }}">
+        <option value="mirror" {{ 'selected' if m == 'mirror' }}>Mirror</option>
+        <option value="inbox" {{ 'selected' if m != 'mirror' }}>Inbox →</option>
+      </select>
+      <input name="dest_{{ role }}" value="{{ m if m != 'mirror' else '' }}" placeholder="destination, e.g. other/From phone">
+    </div>
+    {% endfor %}
+    <label>Where Chrome, Edge and Brave show Firefox's bookmarks menu <input name="menu_folder" value="{{ st.menu_folder }}"></label>
+  </fieldset>
+  <fieldset>
+    <legend>Safety</legend>
+    <div class="row">
+      <label>Hold if a browser deletes more than <input type="number" name="hold_percent" min="1" max="100" value="{{ (st.hold_fraction * 100) | round | int }}"> %</label>
+      <label>or more than <input type="number" name="hold_count" min="1" value="{{ st.hold_count }}"> bookmarks</label>
+    </div>
+    <p class="hint">A browser whose tree becomes empty is always held.</p>
+  </fieldset>
+  <fieldset>
+    <legend>Sync</legend>
+    <label>Scheduled sync every <input type="number" name="sync_interval_min" min="0.5" step="0.5" value="{{ st.sync_interval / 60 }}"> minutes</label>
+    <label>Conflict priority (comma-separated, first wins) <input name="priority" value="{{ st.priority | join(', ') }}" placeholder="e.g. firefox, chrome, edge (default: arrival order)"></label>
+  </fieldset>
+  <fieldset>
+    <legend>Browsers</legend>
+    <label>Restart the browsers every <input type="number" name="restart_hours" min="0" value="{{ st.restart_hours }}"> hours</label>
+    <p class="hint">Clears out memory the browsers build up over time. A restart waits until nobody has used the Console for 5 minutes. Enter 0 to turn it off.{% if last_restart %} Last restart: {{ last_restart }}.{% endif %}{% if next_restart %} Next: {{ next_restart }} or later.{% endif %}</p>
+  </fieldset>
+  <fieldset>
+    <legend>History retention</legend>
+    <div class="row">
+      <label>Keep <input type="number" name="retention_days" min="1" value="{{ st.retention_days }}"> days</label>
+      <label>plus the last <input type="number" name="retention_versions" min="1" value="{{ st.retention_versions }}"> versions</label>
+    </div>
+  </fieldset>
+  <button class="primary">Save settings</button>
+</form>
+
+<h2 class="section">Password</h2>
+<form method="post" action="/settings/password" class="stack">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  {% if pw_error %}<p class="error">{{ pw_error }}</p>{% endif %}
+  <label>Current password <input type="password" name="current" autocomplete="current-password" required{{ " autofocus" if pw_error }}></label>
+  <label>New password <input type="password" name="password" autocomplete="new-password" minlength="10" required></label>
+  <label>Confirm new password <input type="password" name="confirm" autocomplete="new-password" minlength="10" required></label>
+  <p class="hint">Changing it logs out every other session.</p>
+  <div><button>Change password</button></div>
+</form>
+
+<h2 class="section">Session</h2>
+<form method="post" action="/logout" id="logout-form">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <button>Log out</button>
+</form>
+<dialog id="logout-dialog" aria-labelledby="logout-title">
+  <h2 id="logout-title">Log out?</h2>
+  <p>You'll need the portal password to log back in. Syncing carries on while you're logged out.</p>
+  <div class="row end">
+    <button type="button" id="logout-cancel" autofocus>Cancel</button>
+    <button class="primary" form="logout-form">Log out</button>
+  </div>
+</dialog>
+{% endblock %}
+{% block scripts %}
+<script>
+const logoutForm = document.getElementById("logout-form");
+const logoutDialog = document.getElementById("logout-dialog");
+logoutForm.addEventListener("submit", (e) => {
+  if (!logoutDialog.open) { e.preventDefault(); logoutDialog.showModal(); }
+});
+document.getElementById("logout-cancel").addEventListener("click", () => logoutDialog.close());
+</script>
+{% endblock %}

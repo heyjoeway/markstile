@@ -1,0 +1,109 @@
+{
+  "type": "result",
+  "id": 1,
+  "ok": true,
+  "tree": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "dateAdded": 1793737343410,
+              "id": "6",
+              "index": 0,
+              "parentId": "1",
+              "syncing": false,
+              "title": "Stileaf spike (bar)",
+              "url": "https://example.com/bar"
+            }
+          ],
+          "dateAdded": 1793737342558,
+          "dateGroupModified": 1793737343410,
+          "folderType": "bookmarks-bar",
+          "id": "1",
+          "index": 0,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Bookmarks bar"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dateAdded": 1793737343419,
+              "dateGroupModified": 1793737343419,
+              "id": "7",
+              "index": 0,
+              "parentId": "2",
+              "syncing": false,
+              "title": "Stileaf folder (other)"
+            },
+            {
+              "dateAdded": 1793737343424,
+              "id": "8",
+              "index": 1,
+              "parentId": "2",
+              "syncing": false,
+              "title": "No parentId given",
+              "url": "https://example.com/noparent"
+            }
+          ],
+          "dateAdded": 1793737342558,
+          "dateGroupModified": 1793737343424,
+          "folderType": "other",
+          "id": "2",
+          "index": 1,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Other bookmarks"
+        },
+        {
+          "children": [
+            {
+              "dateAdded": 1725526400000,
+              "id": "100",
+              "index": 0,
+              "parentId": "3",
+              "syncing": false,
+              "title": "Seeded mobile bookmark",
+              "url": "https://example.com/mobile"
+            }
+          ],
+          "dateAdded": 1793737342558,
+          "folderType": "mobile",
+          "id": "3",
+          "index": 2,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Mobile bookmarks"
+        },
+        {
+          "children": [
+            {
+              "dateAdded": 1793737401408,
+              "id": "102",
+              "index": 0,
+              "parentId": "101",
+              "syncing": false,
+              "title": "Example",
+              "unmodifiable": "managed",
+              "url": "https://example.com/"
+            }
+          ],
+          "dateAdded": 1793737401406,
+          "folderType": "managed",
+          "id": "101",
+          "index": 3,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Stileaf managed",
+          "unmodifiable": "managed"
+        }
+      ],
+      "dateAdded": 1793737401408,
+      "id": "0",
+      "syncing": false,
+      "title": ""
+    }
+  ]
+}

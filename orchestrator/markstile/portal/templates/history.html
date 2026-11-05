@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}History · MarkStile{% endblock %}
+{% block content %}
+<h1>History</h1>
+<p>Every change to the canonical bookmark tree is kept as a version. Export any version as an HTML bookmarks file, or restore it: all browsers are then reconciled to it.</p>
+<table class="history">
+  <thead><tr><th>#</th><th>When</th><th>Cause</th><th>Changes</th><th>Bookmarks</th><th></th></tr></thead>
+  <tbody>
+  {% for v in versions %}
+  <tr>
+    <td>{{ v.id }}</td>
+    <td title="{{ v.ts | ts }}">{{ v.ts | ago }}</td>
+    <td>{{ v.source }}</td>
+    <td>
+      {% for b, st in (v.summary.browsers or {}).items() %}
+        <div>{{ BROWSER_NAMES.get(b, b) }}: {% for k, n in st.items() if n %}{{ n }} {{ k }}{{ ', ' if not loop.last }}{% endfor %}</div>
+      {% endfor %}
+      {% for b, n in (v.summary.joined or {}).items() %}<div>{{ BROWSER_NAMES.get(b, b) }} joined: +{{ n }}</div>{% endfor %}
+      {% if v.summary.conflicts %}<div class="error-text">{{ v.summary.conflicts }} conflict(s), see Logs</div>{% endif %}
+      {% if v.summary.inbox_moved %}<div>{{ v.summary.inbox_moved }} moved out of inbox</div>{% endif %}
+    </td>
+    <td>{{ v.summary.bookmarks if v.summary.bookmarks is defined else '' }}</td>
+    <td class="actions">
+      <a href="/history/{{ v.id }}/export">Export</a>
+      {% if not loop.first %}
+      <form method="post" action="/history/{{ v.id }}/restore" class="inline" onsubmit="return confirm('Restore version {{ v.id }}? Every browser is reconciled to it; later changes are discarded (they stay in history).')">
+        <input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="confirm" value="yes">
+        <button class="link">Restore</button>
+      </form>
+      {% endif %}
+    </td>
+  </tr>
+  {% else %}
+  <tr><td colspan="6">No versions yet. They start after the first-run merge.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

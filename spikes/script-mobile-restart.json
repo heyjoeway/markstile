@@ -1,0 +1,5 @@
+[
+  {"type": "call", "method": "get", "args": ["3"]},
+  {"type": "call", "method": "create", "args": [{"parentId": "3", "title": "after restart", "url": "https://example.com/m4"}]},
+  {"type": "getTree"}
+]

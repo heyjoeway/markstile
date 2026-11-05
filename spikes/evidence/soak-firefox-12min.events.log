@@ -1,0 +1,44 @@
+{"t": "2026-11-03T15:28:24", "msg": "hello", "peer": "('127.0.0.1', 51804)", "type": "hello", "browser": "firefox", "extVersion": "0.0.3", "browserVersion": "Firefox 160.0", "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:160.0) Gecko/20100101 Firefox/160.0", "extId": "spike@stileaf.local", "workerStartedAt": 1793737704262, "connects": 1}
+{"t": "2026-11-03T15:28:24", "msg": "tree saved", "path": "$SCRATCH/out-ff/tree-firefox.json", "ok": true}
+{"t": "2026-11-03T15:28:25", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "J9x8giyoxqbw"}}
+{"t": "2026-11-03T15:28:25", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "JzdReR-IW8I6"}}
+{"t": "2026-11-03T15:28:25", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "zSGLsoLsSnx2"}}
+{"t": "2026-11-03T15:28:25", "msg": "msg", "browser": "firefox", "data": {"type": "event", "kind": "onCreated", "id": "kH-8B37AOJ33"}}
+{"t": "2026-11-03T15:28:25", "msg": "script done", "path": "$SCRATCH/out-ff/tree-firefox-after.json", "results": [true, true, true, true]}
+{"t": "2026-11-03T15:28:44", "msg": "pong", "browser": "firefox", "uptimeMs": 20257, "connects": 1, "connectedFor": 20}
+{"t": "2026-11-03T15:29:04", "msg": "pong", "browser": "firefox", "uptimeMs": 40278, "connects": 1, "connectedFor": 40}
+{"t": "2026-11-03T15:29:24", "msg": "pong", "browser": "firefox", "uptimeMs": 60297, "connects": 1, "connectedFor": 60}
+{"t": "2026-11-03T15:29:44", "msg": "pong", "browser": "firefox", "uptimeMs": 80323, "connects": 1, "connectedFor": 80}
+{"t": "2026-11-03T15:30:04", "msg": "pong", "browser": "firefox", "uptimeMs": 100352, "connects": 1, "connectedFor": 100}
+{"t": "2026-11-03T15:30:24", "msg": "pong", "browser": "firefox", "uptimeMs": 120375, "connects": 1, "connectedFor": 120}
+{"t": "2026-11-03T15:30:44", "msg": "pong", "browser": "firefox", "uptimeMs": 140397, "connects": 1, "connectedFor": 140}
+{"t": "2026-11-03T15:31:04", "msg": "pong", "browser": "firefox", "uptimeMs": 160419, "connects": 1, "connectedFor": 160}
+{"t": "2026-11-03T15:31:24", "msg": "pong", "browser": "firefox", "uptimeMs": 180440, "connects": 1, "connectedFor": 180}
+{"t": "2026-11-03T15:31:44", "msg": "pong", "browser": "firefox", "uptimeMs": 200461, "connects": 1, "connectedFor": 200}
+{"t": "2026-11-03T15:32:04", "msg": "pong", "browser": "firefox", "uptimeMs": 220482, "connects": 1, "connectedFor": 220}
+{"t": "2026-11-03T15:32:24", "msg": "pong", "browser": "firefox", "uptimeMs": 240503, "connects": 1, "connectedFor": 240}
+{"t": "2026-11-03T15:32:44", "msg": "pong", "browser": "firefox", "uptimeMs": 260525, "connects": 1, "connectedFor": 260}
+{"t": "2026-11-03T15:33:04", "msg": "pong", "browser": "firefox", "uptimeMs": 280538, "connects": 1, "connectedFor": 280}
+{"t": "2026-11-03T15:33:24", "msg": "pong", "browser": "firefox", "uptimeMs": 300559, "connects": 1, "connectedFor": 300}
+{"t": "2026-11-03T15:33:44", "msg": "pong", "browser": "firefox", "uptimeMs": 320563, "connects": 1, "connectedFor": 320}
+{"t": "2026-11-03T15:34:04", "msg": "pong", "browser": "firefox", "uptimeMs": 340585, "connects": 1, "connectedFor": 341}
+{"t": "2026-11-03T15:34:24", "msg": "pong", "browser": "firefox", "uptimeMs": 360607, "connects": 1, "connectedFor": 361}
+{"t": "2026-11-03T15:34:44", "msg": "pong", "browser": "firefox", "uptimeMs": 380628, "connects": 1, "connectedFor": 381}
+{"t": "2026-11-03T15:35:04", "msg": "pong", "browser": "firefox", "uptimeMs": 400649, "connects": 1, "connectedFor": 401}
+{"t": "2026-11-03T15:35:24", "msg": "pong", "browser": "firefox", "uptimeMs": 420668, "connects": 1, "connectedFor": 421}
+{"t": "2026-11-03T15:35:44", "msg": "pong", "browser": "firefox", "uptimeMs": 440689, "connects": 1, "connectedFor": 441}
+{"t": "2026-11-03T15:36:04", "msg": "pong", "browser": "firefox", "uptimeMs": 460710, "connects": 1, "connectedFor": 461}
+{"t": "2026-11-03T15:36:24", "msg": "pong", "browser": "firefox", "uptimeMs": 480733, "connects": 1, "connectedFor": 481}
+{"t": "2026-11-03T15:36:45", "msg": "pong", "browser": "firefox", "uptimeMs": 500755, "connects": 1, "connectedFor": 501}
+{"t": "2026-11-03T15:37:05", "msg": "pong", "browser": "firefox", "uptimeMs": 520777, "connects": 1, "connectedFor": 521}
+{"t": "2026-11-03T15:37:25", "msg": "pong", "browser": "firefox", "uptimeMs": 540794, "connects": 1, "connectedFor": 541}
+{"t": "2026-11-03T15:37:45", "msg": "pong", "browser": "firefox", "uptimeMs": 560803, "connects": 1, "connectedFor": 561}
+{"t": "2026-11-03T15:38:05", "msg": "pong", "browser": "firefox", "uptimeMs": 580824, "connects": 1, "connectedFor": 581}
+{"t": "2026-11-03T15:38:25", "msg": "pong", "browser": "firefox", "uptimeMs": 600846, "connects": 1, "connectedFor": 601}
+{"t": "2026-11-03T15:38:45", "msg": "pong", "browser": "firefox", "uptimeMs": 620850, "connects": 1, "connectedFor": 621}
+{"t": "2026-11-03T15:39:05", "msg": "pong", "browser": "firefox", "uptimeMs": 640865, "connects": 1, "connectedFor": 641}
+{"t": "2026-11-03T15:39:25", "msg": "pong", "browser": "firefox", "uptimeMs": 660887, "connects": 1, "connectedFor": 661}
+{"t": "2026-11-03T15:39:45", "msg": "pong", "browser": "firefox", "uptimeMs": 680908, "connects": 1, "connectedFor": 681}
+{"t": "2026-11-03T15:40:05", "msg": "pong", "browser": "firefox", "uptimeMs": 700931, "connects": 1, "connectedFor": 701}
+{"t": "2026-11-03T15:40:19", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:40:19", "msg": "disconnect", "browser": "firefox", "connectedFor": 715}

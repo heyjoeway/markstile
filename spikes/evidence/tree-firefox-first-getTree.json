@@ -1,0 +1,57 @@
+{
+  "type": "result",
+  "id": 1,
+  "ok": true,
+  "tree": [
+    {
+      "id": "root________",
+      "title": "",
+      "index": 0,
+      "dateAdded": 1793737494600,
+      "type": "folder",
+      "dateGroupModified": 1793737494600,
+      "children": [
+        {
+          "id": "menu________",
+          "title": "Bookmarks Menu",
+          "index": 0,
+          "dateAdded": 1793737494600,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737496231,
+          "children": []
+        },
+        {
+          "id": "toolbar_____",
+          "title": "Bookmarks Toolbar",
+          "index": 1,
+          "dateAdded": 1793737494600,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737496231,
+          "children": []
+        },
+        {
+          "id": "unfiled_____",
+          "title": "Other Bookmarks",
+          "index": 3,
+          "dateAdded": 1793737494600,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737496231,
+          "children": []
+        },
+        {
+          "id": "mobile______",
+          "title": "Mobile Bookmarks",
+          "index": 4,
+          "dateAdded": 1793737494606,
+          "type": "folder",
+          "parentId": "root________",
+          "dateGroupModified": 1793737496231,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

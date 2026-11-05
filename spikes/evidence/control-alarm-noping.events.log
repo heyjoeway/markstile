@@ -1,0 +1,16 @@
+{"t": "2026-11-03T15:23:19", "msg": "listening", "http": 8781, "ws": 8766}
+{"t": "2026-11-03T15:23:24", "msg": "http", "req": "GET /update.xml?os=linux&arch=x64&prod=chromecrx&prodchannel=&prodversion=156.0.8078.79&lang=en-US&acceptformat=crx3,puff&x=id%3Djjlcnfbliebmddiiaompfabigophdggc%26v%3D0.0.0.0%26installsource%3Dnotfromwebstore%26installedby%3Dpolicy%26uc HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:23:25", "msg": "http", "req": "GET /stileaf.crx HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:23:26", "msg": "hello", "peer": "('127.0.0.1', 60266)", "type": "hello", "browser": "chrome", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.79, Google Chrome 156.0.8078.79", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "jjlcnfbliebmddiiaompfabigophdggc", "workerStartedAt": 1793737406058, "connects": 1}
+{"t": "2026-11-03T15:23:26", "msg": "tree saved", "path": "$SCRATCH/out-noping/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:42:26", "msg": "disconnect", "browser": "chrome", "connectedFor": 1140}
+{"t": "2026-11-03T15:42:26", "msg": "hello", "peer": "('127.0.0.1', 54988)", "type": "hello", "browser": "chrome", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.79, Google Chrome 156.0.8078.79", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "jjlcnfbliebmddiiaompfabigophdggc", "workerStartedAt": 1793738546190, "connects": 1}
+{"t": "2026-11-03T15:42:26", "msg": "tree saved", "path": "$SCRATCH/out-noping/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:43:26", "msg": "disconnect", "browser": "chrome", "connectedFor": 60}
+{"t": "2026-11-03T15:43:26", "msg": "hello", "peer": "('127.0.0.1', 55232)", "type": "hello", "browser": "chrome", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.79, Google Chrome 156.0.8078.79", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "jjlcnfbliebmddiiaompfabigophdggc", "workerStartedAt": 1793738606279, "connects": 1}
+{"t": "2026-11-03T15:43:26", "msg": "tree saved", "path": "$SCRATCH/out-noping/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:51:56", "msg": "disconnect", "browser": "chrome", "connectedFor": 510}
+{"t": "2026-11-03T15:51:56", "msg": "hello", "peer": "('127.0.0.1', 59242)", "type": "hello", "browser": "chrome", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.79, Google Chrome 156.0.8078.79", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "jjlcnfbliebmddiiaompfabigophdggc", "workerStartedAt": 1793739116354, "connects": 1}
+{"t": "2026-11-03T15:51:56", "msg": "tree saved", "path": "$SCRATCH/out-noping/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:55:22", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:55:22", "msg": "disconnect", "browser": "chrome", "connectedFor": 206}

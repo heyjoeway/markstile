@@ -1,0 +1,5 @@
+[
+  {"type": "create", "args": {"parentId": "1", "title": "Stileaf spike (bar)", "url": "https://example.com/bar"}},
+  {"type": "create", "args": {"parentId": "2", "title": "Stileaf folder (other)"}},
+  {"type": "create", "args": {"title": "No parentId given", "url": "https://example.com/noparent"}}
+]

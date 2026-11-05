@@ -1,0 +1,186 @@
+{
+  "steps": [
+    {
+      "type": "call",
+      "method": "get",
+      "args": [
+        "3"
+      ]
+    },
+    {
+      "type": "call",
+      "method": "create",
+      "args": [
+        {
+          "parentId": "3",
+          "title": "after restart",
+          "url": "https://example.com/m4"
+        }
+      ]
+    },
+    {
+      "type": "getTree"
+    }
+  ],
+  "results": [
+    {
+      "type": "result",
+      "id": 2,
+      "ok": false,
+      "error": "Can't find bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 3,
+      "ok": false,
+      "error": "Can't find parent bookmark for id."
+    },
+    {
+      "type": "result",
+      "id": 4,
+      "ok": true,
+      "tree": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "dateAdded": 1793740663081,
+                  "id": "5",
+                  "index": 0,
+                  "parentId": "1",
+                  "syncing": false,
+                  "title": "Stileaf spike (bar)",
+                  "url": "https://example.com/bar"
+                }
+              ],
+              "dateAdded": 1793740662343,
+              "dateGroupModified": 1793740671282,
+              "folderType": "bookmarks-bar",
+              "id": "1",
+              "index": 0,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Bookmarks bar"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "dateAdded": 1793740663086,
+                  "dateGroupModified": 1793740663086,
+                  "id": "6",
+                  "index": 0,
+                  "parentId": "2",
+                  "syncing": false,
+                  "title": "Stileaf folder (other)"
+                },
+                {
+                  "dateAdded": 1793740663092,
+                  "id": "7",
+                  "index": 1,
+                  "parentId": "2",
+                  "syncing": false,
+                  "title": "No parentId given",
+                  "url": "https://example.com/noparent"
+                },
+                {
+                  "dateAdded": 1793740671282,
+                  "id": "103",
+                  "index": 2,
+                  "parentId": "2",
+                  "syncing": false,
+                  "title": "to be moved",
+                  "url": "https://example.com/move"
+                }
+              ],
+              "dateAdded": 1793740662343,
+              "dateGroupModified": 1793740671295,
+              "folderType": "other",
+              "id": "2",
+              "index": 1,
+              "parentId": "0",
+              "syncing": false,
+              "title": "Other bookmarks"
+            }
+          ],
+          "dateAdded": 1793740679618,
+          "id": "0",
+          "syncing": false,
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "dateAdded": 1793740663081,
+              "id": "5",
+              "index": 0,
+              "parentId": "1",
+              "syncing": false,
+              "title": "Stileaf spike (bar)",
+              "url": "https://example.com/bar"
+            }
+          ],
+          "dateAdded": 1793740662343,
+          "dateGroupModified": 1793740671282,
+          "folderType": "bookmarks-bar",
+          "id": "1",
+          "index": 0,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Bookmarks bar"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "dateAdded": 1793740663086,
+              "dateGroupModified": 1793740663086,
+              "id": "6",
+              "index": 0,
+              "parentId": "2",
+              "syncing": false,
+              "title": "Stileaf folder (other)"
+            },
+            {
+              "dateAdded": 1793740663092,
+              "id": "7",
+              "index": 1,
+              "parentId": "2",
+              "syncing": false,
+              "title": "No parentId given",
+              "url": "https://example.com/noparent"
+            },
+            {
+              "dateAdded": 1793740671282,
+              "id": "103",
+              "index": 2,
+              "parentId": "2",
+              "syncing": false,
+              "title": "to be moved",
+              "url": "https://example.com/move"
+            }
+          ],
+          "dateAdded": 1793740662343,
+          "dateGroupModified": 1793740671295,
+          "folderType": "other",
+          "id": "2",
+          "index": 1,
+          "parentId": "0",
+          "syncing": false,
+          "title": "Other bookmarks"
+        }
+      ],
+      "dateAdded": 1793740679618,
+      "id": "0",
+      "syncing": false,
+      "title": ""
+    }
+  ]
+}

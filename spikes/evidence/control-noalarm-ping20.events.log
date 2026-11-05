@@ -1,0 +1,101 @@
+{"t": "2026-11-03T15:29:03", "msg": "listening", "http": 8783, "ws": 8768}
+{"t": "2026-11-03T15:29:07", "msg": "http", "req": "GET /update.xml?os=linux&arch=x64&prod=chromecrx&prodchannel=&prodversion=156.0.8078.79&lang=en-US&acceptformat=crx3,puff&x=id%3Dcpaideldajbhmklopcdgpgpglobdcfao%26v%3D0.0.0.0%26installsource%3Dnotfromwebstore%26installedby%3Dpolicy%26uc HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:29:07", "msg": "http", "req": "GET /stileaf.crx HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:29:07", "msg": "http", "req": "GET /update.xml?os=linux&arch=x64&prod=chromiumcrx&prodchannel=unknown&prodversion=156.0.4314.58&lang=en-US&acceptformat=crx3,puff&x=id%3Dcpaideldajbhmklopcdgpgpglobdcfao%26v%3D0.0.0.0%26installsource%3Dnotfromwebstore%26installedby%3Dpolicy%26uc HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:29:08", "msg": "http", "req": "GET /stileaf.crx HTTP/1.1", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC"}
+{"t": "2026-11-03T15:29:08", "msg": "hello", "peer": "('127.0.0.1', 42546)", "type": "hello", "browser": "chrome", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.79, Google Chrome 156.0.8078.79", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36", "extId": "cpaideldajbhmklopcdgpgpglobdcfao", "workerStartedAt": 1793737748894, "connects": 1}
+{"t": "2026-11-03T15:29:08", "msg": "tree saved", "path": "$SCRATCH/out-bareA/tree-chrome.json", "ok": true}
+{"t": "2026-11-03T15:29:10", "msg": "hello", "peer": "('127.0.0.1', 42552)", "type": "hello", "browser": "edge", "extVersion": "0.0.2", "browserVersion": "Chromium 156.0.8078.80, Microsoft Edge 156.0.4314.58", "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0", "extId": "cpaideldajbhmklopcdgpgpglobdcfao", "workerStartedAt": 1793737750257, "connects": 1}
+{"t": "2026-11-03T15:29:10", "msg": "tree saved", "path": "$SCRATCH/out-bareA/tree-edge.json", "ok": true}
+{"t": "2026-11-03T15:29:28", "msg": "pong", "browser": "chrome", "uptimeMs": 20049, "connects": 1, "connectedFor": 20}
+{"t": "2026-11-03T15:29:30", "msg": "pong", "browser": "edge", "uptimeMs": 20273, "connects": 1, "connectedFor": 20}
+{"t": "2026-11-03T15:29:48", "msg": "pong", "browser": "chrome", "uptimeMs": 40069, "connects": 1, "connectedFor": 40}
+{"t": "2026-11-03T15:29:50", "msg": "pong", "browser": "edge", "uptimeMs": 40279, "connects": 1, "connectedFor": 40}
+{"t": "2026-11-03T15:30:08", "msg": "pong", "browser": "chrome", "uptimeMs": 60089, "connects": 1, "connectedFor": 60}
+{"t": "2026-11-03T15:30:10", "msg": "pong", "browser": "edge", "uptimeMs": 60284, "connects": 1, "connectedFor": 60}
+{"t": "2026-11-03T15:30:29", "msg": "pong", "browser": "chrome", "uptimeMs": 80118, "connects": 1, "connectedFor": 80}
+{"t": "2026-11-03T15:30:30", "msg": "pong", "browser": "edge", "uptimeMs": 80289, "connects": 1, "connectedFor": 80}
+{"t": "2026-11-03T15:30:49", "msg": "pong", "browser": "chrome", "uptimeMs": 100139, "connects": 1, "connectedFor": 100}
+{"t": "2026-11-03T15:30:50", "msg": "pong", "browser": "edge", "uptimeMs": 100292, "connects": 1, "connectedFor": 100}
+{"t": "2026-11-03T15:31:09", "msg": "pong", "browser": "chrome", "uptimeMs": 120153, "connects": 1, "connectedFor": 120}
+{"t": "2026-11-03T15:31:10", "msg": "pong", "browser": "edge", "uptimeMs": 120295, "connects": 1, "connectedFor": 120}
+{"t": "2026-11-03T15:31:29", "msg": "pong", "browser": "chrome", "uptimeMs": 140172, "connects": 1, "connectedFor": 140}
+{"t": "2026-11-03T15:31:30", "msg": "pong", "browser": "edge", "uptimeMs": 140298, "connects": 1, "connectedFor": 140}
+{"t": "2026-11-03T15:31:49", "msg": "pong", "browser": "chrome", "uptimeMs": 160193, "connects": 1, "connectedFor": 160}
+{"t": "2026-11-03T15:31:50", "msg": "pong", "browser": "edge", "uptimeMs": 160302, "connects": 1, "connectedFor": 160}
+{"t": "2026-11-03T15:32:09", "msg": "pong", "browser": "chrome", "uptimeMs": 180213, "connects": 1, "connectedFor": 180}
+{"t": "2026-11-03T15:32:10", "msg": "pong", "browser": "edge", "uptimeMs": 180306, "connects": 1, "connectedFor": 180}
+{"t": "2026-11-03T15:32:29", "msg": "pong", "browser": "chrome", "uptimeMs": 200224, "connects": 1, "connectedFor": 200}
+{"t": "2026-11-03T15:32:30", "msg": "pong", "browser": "edge", "uptimeMs": 200309, "connects": 1, "connectedFor": 200}
+{"t": "2026-11-03T15:32:49", "msg": "pong", "browser": "chrome", "uptimeMs": 220244, "connects": 1, "connectedFor": 220}
+{"t": "2026-11-03T15:32:50", "msg": "pong", "browser": "edge", "uptimeMs": 220312, "connects": 1, "connectedFor": 220}
+{"t": "2026-11-03T15:33:09", "msg": "pong", "browser": "chrome", "uptimeMs": 240264, "connects": 1, "connectedFor": 240}
+{"t": "2026-11-03T15:33:10", "msg": "pong", "browser": "edge", "uptimeMs": 240316, "connects": 1, "connectedFor": 240}
+{"t": "2026-11-03T15:33:29", "msg": "pong", "browser": "chrome", "uptimeMs": 260268, "connects": 1, "connectedFor": 260}
+{"t": "2026-11-03T15:33:30", "msg": "pong", "browser": "edge", "uptimeMs": 260319, "connects": 1, "connectedFor": 260}
+{"t": "2026-11-03T15:33:49", "msg": "pong", "browser": "chrome", "uptimeMs": 280288, "connects": 1, "connectedFor": 280}
+{"t": "2026-11-03T15:33:50", "msg": "pong", "browser": "edge", "uptimeMs": 280323, "connects": 1, "connectedFor": 280}
+{"t": "2026-11-03T15:34:09", "msg": "pong", "browser": "chrome", "uptimeMs": 300309, "connects": 1, "connectedFor": 300}
+{"t": "2026-11-03T15:34:10", "msg": "pong", "browser": "edge", "uptimeMs": 300326, "connects": 1, "connectedFor": 300}
+{"t": "2026-11-03T15:34:29", "msg": "pong", "browser": "chrome", "uptimeMs": 320329, "connects": 1, "connectedFor": 320}
+{"t": "2026-11-03T15:34:30", "msg": "pong", "browser": "edge", "uptimeMs": 320329, "connects": 1, "connectedFor": 320}
+{"t": "2026-11-03T15:34:49", "msg": "pong", "browser": "chrome", "uptimeMs": 340345, "connects": 1, "connectedFor": 340}
+{"t": "2026-11-03T15:34:50", "msg": "pong", "browser": "edge", "uptimeMs": 340332, "connects": 1, "connectedFor": 340}
+{"t": "2026-11-03T15:35:09", "msg": "pong", "browser": "chrome", "uptimeMs": 360359, "connects": 1, "connectedFor": 360}
+{"t": "2026-11-03T15:35:10", "msg": "pong", "browser": "edge", "uptimeMs": 360336, "connects": 1, "connectedFor": 360}
+{"t": "2026-11-03T15:35:29", "msg": "pong", "browser": "chrome", "uptimeMs": 380379, "connects": 1, "connectedFor": 380}
+{"t": "2026-11-03T15:35:30", "msg": "pong", "browser": "edge", "uptimeMs": 380339, "connects": 1, "connectedFor": 380}
+{"t": "2026-11-03T15:35:49", "msg": "pong", "browser": "chrome", "uptimeMs": 400400, "connects": 1, "connectedFor": 400}
+{"t": "2026-11-03T15:35:50", "msg": "pong", "browser": "edge", "uptimeMs": 400342, "connects": 1, "connectedFor": 400}
+{"t": "2026-11-03T15:36:09", "msg": "pong", "browser": "chrome", "uptimeMs": 420402, "connects": 1, "connectedFor": 420}
+{"t": "2026-11-03T15:36:10", "msg": "pong", "browser": "edge", "uptimeMs": 420346, "connects": 1, "connectedFor": 420}
+{"t": "2026-11-03T15:36:29", "msg": "pong", "browser": "chrome", "uptimeMs": 440422, "connects": 1, "connectedFor": 440}
+{"t": "2026-11-03T15:36:30", "msg": "pong", "browser": "edge", "uptimeMs": 440348, "connects": 1, "connectedFor": 440}
+{"t": "2026-11-03T15:36:49", "msg": "pong", "browser": "chrome", "uptimeMs": 460443, "connects": 1, "connectedFor": 460}
+{"t": "2026-11-03T15:36:50", "msg": "pong", "browser": "edge", "uptimeMs": 460353, "connects": 1, "connectedFor": 460}
+{"t": "2026-11-03T15:37:09", "msg": "pong", "browser": "chrome", "uptimeMs": 480459, "connects": 1, "connectedFor": 480}
+{"t": "2026-11-03T15:37:10", "msg": "pong", "browser": "edge", "uptimeMs": 480354, "connects": 1, "connectedFor": 480}
+{"t": "2026-11-03T15:37:29", "msg": "pong", "browser": "chrome", "uptimeMs": 500480, "connects": 1, "connectedFor": 500}
+{"t": "2026-11-03T15:37:30", "msg": "pong", "browser": "edge", "uptimeMs": 500358, "connects": 1, "connectedFor": 500}
+{"t": "2026-11-03T15:37:49", "msg": "pong", "browser": "chrome", "uptimeMs": 520501, "connects": 1, "connectedFor": 520}
+{"t": "2026-11-03T15:37:50", "msg": "pong", "browser": "edge", "uptimeMs": 520361, "connects": 1, "connectedFor": 520}
+{"t": "2026-11-03T15:38:09", "msg": "pong", "browser": "chrome", "uptimeMs": 540521, "connects": 1, "connectedFor": 541}
+{"t": "2026-11-03T15:38:10", "msg": "pong", "browser": "edge", "uptimeMs": 540364, "connects": 1, "connectedFor": 540}
+{"t": "2026-11-03T15:38:29", "msg": "pong", "browser": "chrome", "uptimeMs": 560536, "connects": 1, "connectedFor": 561}
+{"t": "2026-11-03T15:38:30", "msg": "pong", "browser": "edge", "uptimeMs": 560367, "connects": 1, "connectedFor": 560}
+{"t": "2026-11-03T15:38:49", "msg": "pong", "browser": "chrome", "uptimeMs": 580558, "connects": 1, "connectedFor": 581}
+{"t": "2026-11-03T15:38:50", "msg": "pong", "browser": "edge", "uptimeMs": 580371, "connects": 1, "connectedFor": 580}
+{"t": "2026-11-03T15:39:09", "msg": "pong", "browser": "chrome", "uptimeMs": 600577, "connects": 1, "connectedFor": 601}
+{"t": "2026-11-03T15:39:10", "msg": "pong", "browser": "edge", "uptimeMs": 600378, "connects": 1, "connectedFor": 600}
+{"t": "2026-11-03T15:39:29", "msg": "pong", "browser": "chrome", "uptimeMs": 620594, "connects": 1, "connectedFor": 621}
+{"t": "2026-11-03T15:39:30", "msg": "pong", "browser": "edge", "uptimeMs": 620381, "connects": 1, "connectedFor": 620}
+{"t": "2026-11-03T15:39:49", "msg": "pong", "browser": "chrome", "uptimeMs": 640615, "connects": 1, "connectedFor": 641}
+{"t": "2026-11-03T15:39:50", "msg": "pong", "browser": "edge", "uptimeMs": 640383, "connects": 1, "connectedFor": 640}
+{"t": "2026-11-03T15:40:09", "msg": "pong", "browser": "chrome", "uptimeMs": 660629, "connects": 1, "connectedFor": 661}
+{"t": "2026-11-03T15:40:10", "msg": "pong", "browser": "edge", "uptimeMs": 660385, "connects": 1, "connectedFor": 660}
+{"t": "2026-11-03T15:40:29", "msg": "pong", "browser": "chrome", "uptimeMs": 680649, "connects": 1, "connectedFor": 681}
+{"t": "2026-11-03T15:40:30", "msg": "pong", "browser": "edge", "uptimeMs": 680388, "connects": 1, "connectedFor": 680}
+{"t": "2026-11-03T15:40:49", "msg": "pong", "browser": "chrome", "uptimeMs": 700666, "connects": 1, "connectedFor": 701}
+{"t": "2026-11-03T15:40:50", "msg": "pong", "browser": "edge", "uptimeMs": 700391, "connects": 1, "connectedFor": 700}
+{"t": "2026-11-03T15:41:09", "msg": "pong", "browser": "chrome", "uptimeMs": 720687, "connects": 1, "connectedFor": 721}
+{"t": "2026-11-03T15:41:10", "msg": "pong", "browser": "edge", "uptimeMs": 720394, "connects": 1, "connectedFor": 720}
+{"t": "2026-11-03T15:41:29", "msg": "pong", "browser": "chrome", "uptimeMs": 740707, "connects": 1, "connectedFor": 741}
+{"t": "2026-11-03T15:41:30", "msg": "pong", "browser": "edge", "uptimeMs": 740397, "connects": 1, "connectedFor": 740}
+{"t": "2026-11-03T15:41:49", "msg": "pong", "browser": "chrome", "uptimeMs": 760728, "connects": 1, "connectedFor": 761}
+{"t": "2026-11-03T15:41:50", "msg": "pong", "browser": "edge", "uptimeMs": 760398, "connects": 1, "connectedFor": 760}
+{"t": "2026-11-03T15:42:09", "msg": "pong", "browser": "chrome", "uptimeMs": 780741, "connects": 1, "connectedFor": 781}
+{"t": "2026-11-03T15:42:10", "msg": "pong", "browser": "edge", "uptimeMs": 780401, "connects": 1, "connectedFor": 780}
+{"t": "2026-11-03T15:42:29", "msg": "pong", "browser": "chrome", "uptimeMs": 800765, "connects": 1, "connectedFor": 801}
+{"t": "2026-11-03T15:42:30", "msg": "pong", "browser": "edge", "uptimeMs": 800405, "connects": 1, "connectedFor": 800}
+{"t": "2026-11-03T15:42:49", "msg": "pong", "browser": "chrome", "uptimeMs": 820783, "connects": 1, "connectedFor": 821}
+{"t": "2026-11-03T15:42:50", "msg": "pong", "browser": "edge", "uptimeMs": 820411, "connects": 1, "connectedFor": 820}
+{"t": "2026-11-03T15:43:09", "msg": "pong", "browser": "chrome", "uptimeMs": 840802, "connects": 1, "connectedFor": 841}
+{"t": "2026-11-03T15:43:10", "msg": "pong", "browser": "edge", "uptimeMs": 840415, "connects": 1, "connectedFor": 840}
+{"t": "2026-11-03T15:43:29", "msg": "pong", "browser": "chrome", "uptimeMs": 860824, "connects": 1, "connectedFor": 861}
+{"t": "2026-11-03T15:43:30", "msg": "pong", "browser": "edge", "uptimeMs": 860418, "connects": 1, "connectedFor": 860}
+{"t": "2026-11-03T15:43:49", "msg": "pong", "browser": "chrome", "uptimeMs": 880849, "connects": 1, "connectedFor": 881}
+{"t": "2026-11-03T15:43:50", "msg": "pong", "browser": "edge", "uptimeMs": 880421, "connects": 1, "connectedFor": 880}
+{"t": "2026-11-03T15:44:05", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:44:05", "msg": "disconnect", "browser": "chrome", "connectedFor": 896}
+{"t": "2026-11-03T15:44:05", "msg": "ws error", "err": "ConnectionClosedError(None, None, None)"}
+{"t": "2026-11-03T15:44:05", "msg": "disconnect", "browser": "edge", "connectedFor": 895}
