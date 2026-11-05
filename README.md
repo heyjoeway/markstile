@@ -34,10 +34,10 @@ Or without Compose:
 
 ```bash
 docker build -f docker/Dockerfile -t markstile .
-docker run -d --name markstile -p 8080:8080 --shm-size=1g --stop-timeout 30 -v markstile-data:/data markstile
+docker run -d --name markstile -p 34871:34871 --shm-size=1g --stop-timeout 30 -v markstile-data:/data markstile
 ```
 
-Then open `http://<host>:8080` and:
+Then open `http://<host>:34871` and:
 
 1. **Set the portal password.** Whoever opens the portal first sets it, so do this right away. The container holds no data before you sign in.
 2. **Choose your browsers.** Only the ones you tick are started and synced. You can change this later on the **Browsers** page.
@@ -58,7 +58,7 @@ After that, changes in any browser, or on any device that syncs to one, reach al
 GitHub Actions publishes the image to `ghcr.io/heyjoeway/markstile`, tagged `latest` and with the build date (for example `2026.11.05.42`). A new image is built after every change to `main`, and once a day if any browser or the Ubuntu base image has a new release; days without one publish nothing. Use it instead of building:
 
 ```bash
-docker run -d --name markstile -p 8080:8080 --shm-size=1g --stop-timeout 30 -v markstile-data:/data ghcr.io/heyjoeway/markstile:latest
+docker run -d --name markstile -p 34871:34871 --shm-size=1g --stop-timeout 30 -v markstile-data:/data ghcr.io/heyjoeway/markstile:latest
 ```
 
 ### TrueNAS SCALE
@@ -67,10 +67,10 @@ MarkStile isn't in the TrueNAS app catalog, so it installs as a custom app (True
 
 1. **Create a dataset** for its data, for example `POOL/apps/markstile` (**Datasets → Add Dataset**, preset *Generic*). The container makes itself the owner (UID 1000) on its first start.
 2. Go to **Apps → Discover Apps**, open the **⋮** menu and choose **Install via YAML**. Name the app `markstile`.
-3. Paste [`deploy/truenas.yaml`](deploy/truenas.yaml), with your dataset path and the newest image tag filled in, and click **Save**.
-4. Open `http://<truenas-address>:8080` and continue with step 1 of the quick start above.
+3. Paste [`deploy/truenas.yaml`](deploy/truenas.yaml), with your dataset path filled in, and click **Save**.
+4. Open `http://<truenas-address>:34871` and continue with step 1 of the quick start above.
 
-If port 8080 is taken on your NAS, change the number on the left of `8080:8080`. To update, edit the app, change the image tag to a newer one, and save.
+If port 34871 is taken on your NAS, change the number on the left of `34871:34871`. The app follows the `latest` image. TrueNAS checks for newer images and shows an **Update** button on the app when one is published; click it to pull the new build and restart.
 
 ## How it works
 
@@ -122,7 +122,7 @@ Everything is configured in the portal. Environment variables are optional:
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `PORT` | `8080` | Portal port (the only exposed port). |
+| `PORT` | `34871` | Portal port (the only exposed port). |
 | `MARKSTILE_BROWSERS` | — | Comma-separated browsers to run and sync (`chrome`, `edge`, `brave`, `vivaldi`, `opera`, `firefox`), to skip the portal's browser choice on a fresh install. Ignored once a choice is saved. |
 | `SYNC_INTERVAL` | `5m` | Initial scheduled sync interval (`300`, `90s`, `5m`, `1h`). The portal setting overrides it afterwards. |
 | `PORTAL_RESET` | — | Change its value to reset the portal password (see below). |
@@ -192,7 +192,7 @@ Back up the volume to keep both your sign-ins and your history.
 python3 -m venv .venv && .venv/bin/pip install -e 'orchestrator[test]'
 cd orchestrator && ../.venv/bin/pytest                         # unit, property and portal tests
 HYPOTHESIS_PROFILE=stress ../.venv/bin/pytest tests/test_properties.py
-../.venv/bin/markstile demo                                       # portal on 127.0.0.1:8080 with three fake browsers
+../.venv/bin/markstile demo                                       # portal on 127.0.0.1:34871 with three fake browsers
 python3 extension/build.py build/extension                      # unpacked Chrome extension + firefox.xpi
 ```
 

@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     ports:
       # LAN/Tailscale only. Do not expose this to the internet.
-      - "8080:8080"
+      - "34871:34871"
     shm_size: "1gb"
     # let the browsers flush their bookmark files on shutdown
     stop_grace_period: 30s

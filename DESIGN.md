@@ -59,7 +59,7 @@ Single container, processes managed by **supervisord** (or s6; pick one), all re
 | `firefox-devedition` | From Mozilla's apt repo |
 | `orchestrator` | Python: WebSocket server for extensions, sync engine, scheduler, web portal (FastAPI/uvicorn), noVNC WebSocket proxy, CRX update server |
 
-**Exposed:** a single port (default `8080`) for the portal. Everything else binds to localhost.
+**Exposed:** a single port (default `34871`) for the portal. Everything else binds to localhost.
 
 **Browser launch notes**
 - Use ordinary launches: **no** automation or remote-debugging flags (`--remote-debugging-port`, `--enable-automation`, etc.). They risk vendor sign-in blocks.
@@ -78,7 +78,7 @@ Single container, processes managed by **supervisord** (or s6; pick one), all re
 
 **Environment variables (all optional)**
 - `PORTAL_RESET` — changing its value triggers portal password-reset mode (§8.2).
-- `PORT` — portal port (default 8080).
+- `PORT` — portal port (default 34871).
 - `SYNC_INTERVAL` — scheduled sync interval (default 5 min).
 - `TZ` — for log timestamps.
 

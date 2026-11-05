@@ -121,7 +121,7 @@ async def serve(demo: bool = False) -> None:
     app = create_app(ctx)
     scheduler.start()
     ctx.restarter.start()
-    port = int(os.environ.get("PORT", "8080"))
+    port = int(os.environ.get("PORT", "34871"))
     host = os.environ.get("BIND", "127.0.0.1" if demo else "0.0.0.0")
     config = uvicorn.Config(app, host=host, port=port, log_level="warning", proxy_headers=True,
                             forwarded_allow_ips=os.environ.get("FORWARDED_ALLOW_IPS", "127.0.0.1"))

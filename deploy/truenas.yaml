@@ -1,19 +1,18 @@
 # MarkStile as a TrueNAS custom app (Apps → Discover Apps → ⋮ → Install via YAML).
 # Before pasting:
 #   - replace /mnt/POOL/apps/markstile with the dataset you created for it;
-#   - replace the image tag with the newest one listed on the package page
-#     (tags look like 2026.11.05.42; pinning one means updates happen when you
-#     choose, by editing the app and changing the tag).
+#   - to pin a version instead of following latest, use a dated tag from the
+#     package page (they look like 2026.11.05.42).
 # TrueNAS drops these comments when it saves the app.
 name: markstile
 services:
   markstile:
-    image: ghcr.io/heyjoeway/markstile:YYYY.MM.DD.N
+    image: ghcr.io/heyjoeway/markstile:latest
     platform: linux/amd64
     restart: unless-stopped
     ports:
       # LAN only. Do not forward this port to the internet.
-      - "8080:8080"
+      - "34871:34871"
     shm_size: 1gb
     # let the browsers flush their bookmark files on shutdown
     stop_grace_period: 30s

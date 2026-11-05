@@ -72,11 +72,11 @@ ENV MARKSTILE_DATA=/data \
     MARKSTILE_EXT=/opt/markstile/ext \
     MARKSTILE_USER=markstile \
     NOVNC_DIR=/usr/share/novnc \
-    PORT=8080 \
+    PORT=34871 \
     LANG=C.UTF-8
 
 VOLUME /data
-EXPOSE 8080
+EXPOSE 34871
 HEALTHCHECK --interval=60s --timeout=5s --start-period=60s \
     CMD curl -fsS -o /dev/null "http://127.0.0.1:${PORT}/login" || exit 1
 ENTRYPOINT ["/usr/bin/tini", "--", "/opt/markstile/entrypoint.sh"]
