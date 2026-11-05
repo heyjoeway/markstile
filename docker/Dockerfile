@@ -41,7 +41,11 @@ RUN curl -fsSL https://repo.vivaldi.com/archive/linux_signing_key.pub | gpg --de
     && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/opera.gpg] https://deb.opera.com/opera-stable/ stable non-free" \
         > /etc/apt/sources.list.d/opera-stable.list \
     && apt-get update && apt-get install -y --no-install-recommends xz-utils gsettings-desktop-schemas vivaldi-stable opera-stable \
-    && /opt/vivaldi/update-ffmpeg --system \
+    # Vivaldi's postinst starts update-ffmpeg in the background; running a second
+    # copy alongside it fails at random, so wait for it (ours then finds the
+    # codecs in place) and retry once if the download itself failed
+    && for _ in $(seq 120); do pgrep -x update-ffmpeg >/dev/null || break; sleep 1; done \
+    && { /opt/vivaldi/update-ffmpeg --system || /opt/vivaldi/update-ffmpeg --system; } \
     && rm -rf /var/lib/apt/lists/*
 
 # Taskbar for switching between the browser windows in the console.
